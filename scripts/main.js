@@ -1,6 +1,6 @@
 import { populatePage } from "./utils.mjs";
 
-if (window.location.href.includes("index")) {
+if (document.querySelector("#stats") != null) {
     populatePage("quests", true);
     populatePage("quests", false);
 }
