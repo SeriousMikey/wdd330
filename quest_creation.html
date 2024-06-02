@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adventure With Me</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/normalize.css">
 </head>
 <body>
     <header>
@@ -14,20 +16,22 @@
         </nav>
     </header>
     <main>
+        <h1>Quest Creator</h1>
         <form name="quest-creation" class="creator">
             <fieldset class="info">
                 <label>Quest Name: <input type="text" name="questname" required></label>
-                <label>Description: <textarea></textarea></label>
+                <label>Description:</label>
+                <label><textarea></textarea></label>
             </fieldset>
             <fieldset class="rewards">
                 <label>Rewards:</label>
-                <label>EXP: <input type="text" name="exp" required></label>
-                <label>Stats: </label>
-                <label>Health<input type="checkbox" name="health"></label>
-                <label>Strength<input type="checkbox" name="strength"></label>
-                <label>Defense<input type="checkbox" name="defense"></label>
-                <label>Stamina<input type="checkbox" name="stamina"></label>
-                <label>Magic<input type="checkbox" name="magic"></label>
+                <label>EXP: <input type="text" name="exp" class="small-box" required></label>
+                <label>Stats:</label>
+                <label>+1 Health<input type="checkbox" name="health"></label>
+                <label>+1 Strength<input type="checkbox" name="strength"></label>
+                <label>+1 Defense<input type="checkbox" name="defense"></label>
+                <label>+1 Stamina<input type="checkbox" name="stamina"></label>
+                <label>+1 Magic<input type="checkbox" name="magic"></label>
             </fieldset>
             <button class="big-button">Create</button>
             <button class="small-button">Start Over</button>

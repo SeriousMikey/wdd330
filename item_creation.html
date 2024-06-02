@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adventure With Me</title>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/normalize.css">
 </head>
 <body>
     <header>
@@ -14,11 +16,13 @@
         </nav>
     </header>
     <main>
+        <h1>Item Creator</h1>
         <form name="quest-creation" class="creator">
             <fieldset class="info">
                 <label>Item Name: <input type="text" name="questname" required></label>
-                <label>Description: <textarea></textarea></label>
-                <label>Cost: <input type="text" name="cost" required></label>
+                <label>Cost: $<input type="text" name="cost" class="small-box" required></label>
+                <label>Description:</label>
+                <label><textarea></textarea></label>
             </fieldset>
             <button class="big-button">Create</button>
             <button class="small-button">Start Over</button>
