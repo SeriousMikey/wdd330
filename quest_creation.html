@@ -19,23 +19,24 @@
         <h1>Quest Creator</h1>
         <form name="quest-creation" class="creator">
             <fieldset class="info">
-                <label>Quest Name: <input type="text" name="questname" required></label>
+                <label>Quest Name: <input type="text" name="questname" id="questname" required></label>
                 <label>Description:</label>
-                <label><textarea></textarea></label>
+                <label><textarea id="questdescription" ></textarea></label>
             </fieldset>
             <fieldset class="rewards">
                 <label>Rewards:</label>
-                <label>EXP: <input type="text" name="exp" class="small-box" required></label>
+                <label>EXP: <input type="text" name="exp" class="small-box" id="exp" required></label>
                 <label>Stats:</label>
-                <label>+1 Health<input type="checkbox" name="health"></label>
-                <label>+1 Strength<input type="checkbox" name="strength"></label>
-                <label>+1 Defense<input type="checkbox" name="defense"></label>
-                <label>+1 Stamina<input type="checkbox" name="stamina"></label>
-                <label>+1 Magic<input type="checkbox" name="magic"></label>
+                <label>+1 Health<input type="checkbox" name="health" id="health" ></label>
+                <label>+1 Strength<input type="checkbox" name="strength" id="strength" ></label>
+                <label>+1 Defense<input type="checkbox" name="defense" id="defense" ></label>
+                <label>+1 Stamina<input type="checkbox" name="stamina" id="stamina" ></label>
+                <label>+1 Magic<input type="checkbox" name="magic" id="magic" ></label>
             </fieldset>
-            <button class="big-button">Create</button>
+            <button class="big-button" id="createQuest">Create</button>
             <button class="small-button">Start Over</button>
         </form>
     </main>
+    <script src="scripts/QuestCreator.mjs" type="module"></script>
 </body>
 </html>
