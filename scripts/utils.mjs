@@ -1,33 +1,26 @@
-export function populatePage(type, active) {
-    if (type == "items") {
-        if (active == true) {
-            renderInventory();
-        }
-        else {
-            renderStore();
-        }
+export function populatePage(array) {
+    if (array["Type"] == "Item" && array["Active"]) {
+        renderInventory(array);
     }
-    else if (type == "quests") {
-        if (active == true) {
-            renderActiveQuests();
-        }
-        else {
-            renderQuestBoard();
-        }
+    else if (array["Type"] == "Item" && !array["Active"]) {
+        renderStore(array);
     }
-    else {
-        console.log("Not a correct type")
+    else if (array["Type"] == "Quest" && array["Active"]) {
+        renderActiveQuests(array);
+        }
+    else if (array["Type"] == "Quest" && !array["Active"]) {
+        renderQuestBoard(array);
     }
 }
 
-function renderInventory() {
+function renderInventory(array) {
     let section = document.querySelector(".items");
     let newDiv = document.createElement("div");
     newDiv.setAttribute("class", "item-box")
 
-    let content = `<h2>Item Name</h2>
+    let content = `<h2>${array.Name}</h2>
     <h4>Description:</h4>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi labore reiciendis cupiditate rerum aut quasi recusandae distinctio, culpa dicta quia?</p>
+    <p>${array.Description}</p>
     <button class="big-button">Use</button>
     <button class="small-button">Discard</button>`
 
@@ -35,15 +28,15 @@ function renderInventory() {
     section.appendChild(newDiv);
 }
 
-function renderStore() {
+function renderStore(array) {
     let section = document.querySelector(".items");
     let newDiv = document.createElement("div");
     newDiv.setAttribute("class", "item-box")
 
-    let content = `<h2>Item Name</h2>
-    <h3>Cost: $40</h3>
+    let content = `<h2>${array.Name}</h2>
+    <h3>Cost: ${array.Cost}</h3>
     <h4>Description:</h4>
-    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi labore reiciendis cupiditate rerum aut quasi recusandae distinctio, culpa dicta quia?</p>
+    <p>${array.Description}</p>
     <button class="big-button">Purchase</button>
     <button class="small-button">Delete</button>`
 
@@ -51,23 +44,25 @@ function renderStore() {
     section.appendChild(newDiv);
 }
 
-function renderActiveQuests() {
+function renderActiveQuests(array) {
     let section = document.querySelector("#active-quests");
     let newDiv = document.createElement("div");
     newDiv.setAttribute("class", "quest-box")
 
-    let content = `<h2>Quest Name</h2>
+    let content = `<h2>${array.Name}</h2>
     <div class="rewards-box">
         <h4>Rewards:</h4>
         <p>+53 EXP</p>
-        <p>+10 Dollars</p>
-        <p>+1 Strength</p>
-        <p>+1 Defense</p>
-        <p>+1 Stamina</p>
-    </div>
+        <p>+10 Dollars</p>`
+
+    for (let i = 0; i < array.Stats.length; i++) {
+        content += `<p>+1 ${String(array.Stats[i])}</p>`;
+    }
+
+    content += `</div>
     <div class="description-box">
         <h4>Description</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, adipisci.</p>
+        <p>${array.Description}</p>
     </div>
     <button class="big-button">Mark Complete</button>
     <button class="small-button">Abandon</button>`
@@ -76,23 +71,25 @@ function renderActiveQuests() {
     section.appendChild(newDiv);
 }
 
-function renderQuestBoard() {
+function renderQuestBoard(array) {
     let section = document.querySelector("#quest-board");
     let newDiv = document.createElement("div");
     newDiv.setAttribute("class", "quest-box")
 
-    let content = `<h2>Quest Name</h2>
+    let content = `<h2>${array.Name}</h2>
     <div class="rewards-box">
         <h4>Rewards:</h4>
-        <p>+53 EXP</p>
-        <p>+10 Dollars</p>
-        <p>+1 Strength</p>
-        <p>+1 Defense</p>
-        <p>+1 Stamina</p>
-    </div>
+        <p>+${array.Exp} EXP</p>
+        <p>+${array.Dollars} Dollars</p>`
+
+    for (let i = 0; i < array.Stats.length; i++) {
+        content += `<p>+1 ${String(array.Stats[i])}</p>`;
+    }
+
+    content += `</div>
     <div class="description-box">
         <h4>Description</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, adipisci.</p>
+        <p>${array.Description}</p>
     </div>
     <button class="big-button">Accept</button>
     <button class="small-button">Delete</button>`

@@ -17,16 +17,17 @@
     </header>
     <main>
         <h1>Item Creator</h1>
-        <form name="quest-creation" class="creator">
+        <form name="item-creation" class="creator">
             <fieldset class="info">
-                <label>Item Name: <input type="text" name="questname" required></label>
-                <label>Cost: $<input type="text" name="cost" class="small-box" required></label>
+                <label>Item Name: <input type="text" name="itemname" id="itemname" required></label>
+                <label>Cost: $<input type="number" name="cost" class="small-box" id="cost" required></label>
                 <label>Description:</label>
-                <label><textarea></textarea></label>
+                <label><textarea id="itemdescription"></textarea></label>
             </fieldset>
-            <button class="big-button">Create</button>
-            <button class="small-button">Start Over</button>
+            <input type="submit" value="Create Item" class="big-button">
+            <input type="reset" value="Start Over" class="small-button">
         </form>
     </main>
+    <script src="scripts/ItemCreator.mjs" type="module"></script>
 </body>
 </html>
