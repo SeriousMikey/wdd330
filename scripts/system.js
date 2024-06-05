@@ -33,12 +33,10 @@ function setStats() {
     let magic = document.getElementById("user-magic");
     let statTotal = document.getElementById("user-total");
 
-    if (user.CurrentEXP > user.NecessaryEXP) {
-        do {
+    while (user.CurrentEXP > user.NecessaryEXP) {
             user.Level += 1;
             user.CurrentEXP -= user.NecessaryEXP;
             user.NecessaryEXP *= 1.2;
-        } while (user.CurrentEXP > user.NecessaryEXP);
     }
 
     level.innerHTML = `Level: ${user.Level}`;
