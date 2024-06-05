@@ -52,8 +52,8 @@ function renderActiveQuests(array) {
     let content = `<h2>${array.Name}</h2>
     <div class="rewards-box">
         <h4>Rewards:</h4>
-        <p>+53 EXP</p>
-        <p>+10 Dollars</p>`
+        <p>+${array.Exp} EXP</p>
+        <p>+${array.Dollars} Dollars</p>`
 
     for (let i = 0; i < array.Stats.length; i++) {
         content += `<p>+1 ${String(array.Stats[i])}</p>`;

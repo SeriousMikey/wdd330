@@ -19,15 +19,17 @@
         <h1>User Stats</h1>
         <section id="stats">
             <div class="stat-box">
-                <h2>User Name</h2>
-                <h3>Level: 0</h3>
-                <p>Current EXP: 20/100</p>
-                <p>Health: 0</p>
-                <p>Strength: 0</p>
-                <p>Defense: 0</p>
-                <p>Stamina: 0</p>
-                <p>Magic: 0</p>
-                <h3>Stat Total: 0</h3>
+                <h2><input type="text" name="user-name" id="user-name" placeholder="Your Name Here"></h2>
+                <button id="name-button">Save Name</button>
+                <h3 id="user-level">Level: 0</h3>
+                <p id="user-exp">Current EXP: 0/100</p>
+                <p id="user-dollars">Money: $0</p>
+                <p id="user-health">Health: 0</p>
+                <p id="user-strength">Strength: 0</p>
+                <p id="user-defense">Defense: 0</p>
+                <p id="user-stamina">Stamina: 0</p>
+                <p id="user-magic">Magic: 0</p>
+                <h3 id="user-total">Stat Total: 0</h3>
             </div>
         </section>
         <h1>Active Quests</h1>
@@ -40,6 +42,7 @@
             
         </section>
     </main>
+    <script src="scripts/system.js" type="module"></script>
     <script src="scripts/main.js" type="module"></script>
 </body>
 </html>
