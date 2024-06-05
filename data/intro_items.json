@@ -1,0 +1,37 @@
+{
+    "0" : {
+        "Type": "Item",
+        "Name": "Intro Item",
+        "Description": "This is the description of the item.",
+        "Cost": "10",
+        "Active" : false
+    },
+    "1" : {
+        "Type": "Item",
+        "Name": "Free Time",
+        "Description": "Spend some free time.",
+        "Cost": "40",
+        "Active" : false
+    },
+    "2" : {
+        "Type": "Item",
+        "Name": "Icecream",
+        "Description": "Eat the ice cream.",
+        "Cost": "15",
+        "Active" : false
+    },
+    "3" : {
+        "Type": "Item",
+        "Name": "McDonalds",
+        "Description": "Go to mcdonalds.",
+        "Cost": "20",
+        "Active" : false
+    },
+    "4" : {
+        "Type": "Item",
+        "Name": "Pet the Cat",
+        "Description": "Just as the name says.",
+        "Cost": "2",
+        "Active" : false
+    }
+}

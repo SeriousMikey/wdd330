@@ -1,7 +1,19 @@
 import { populatePage } from "./utils.mjs";
-
+let questURL = "https://seriousmikey.github.io/wdd330/data/intro_quests.json";
+let itemURL = "https://seriousmikey.github.io/wdd330/data/intro_items.json";
+//let questURL = "../data/intro_quests.json";
+//let itemURL = "../data/intro_items.json";
 
 function loadPage() {
+    if (localStorage.getItem("introQuests") == null && document.querySelector("#stats") != null) {
+        loadIntroQuests();
+        localStorage.setItem("introQuests", "done");
+    }
+    if (localStorage.getItem("introItems") == null && window.location.href.includes("store")) {
+        loadIntroItems();
+        localStorage.setItem("introItems", "done");
+    }
+
     if (document.querySelector("#stats") != null && localStorage.getItem("quest-board") != null) {
         let questBoard = JSON.parse(localStorage.getItem("quest-board"));
         questBoard.map(populatePage);
@@ -218,6 +230,30 @@ function deleteItem(itemName) {
             location.reload();
         }
     }
+}
+
+async function loadIntroQuests() {
+    const response = await fetch(questURL);
+    const data = await response.json();
+    let questBoard = [];
+
+    for (let i = 0; i < 5; i++) {
+        questBoard.push(data[i]);
+    }
+
+    localStorage.setItem("quest-board", JSON.stringify(questBoard));
+}
+
+async function loadIntroItems() {
+    const response = await fetch(itemURL);
+    const data = await response.json();
+    let store = [];
+
+    for (let i = 0; i < 5; i++) {
+        store.push(data[i]);
+    }
+
+    localStorage.setItem("store", JSON.stringify(store));
 }
 
 loadPage();

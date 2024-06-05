@@ -1,0 +1,60 @@
+{
+    "0" : {
+        "Type": "Quest",
+        "Name": "Intro Quest",
+        "Description": "This is the description of the quest.",
+        "Exp": "10",
+        "Dollars": "10",
+        "Stats" : [
+            "Health",
+            "Strength"
+        ],
+        "Active" : false
+    },
+    "1" : {
+        "Type": "Quest",
+        "Name": "Cool Quest",
+        "Description": "This quest is super cool.",
+        "Exp": "12",
+        "Dollars": "22",
+        "Stats" : [
+            "Defense",
+            "Strength"
+        ],
+        "Active" : false
+    },
+    "2" : {
+        "Type": "Quest",
+        "Name": "Odd Quest",
+        "Description": "This quest is kinda odd.",
+        "Exp": "43",
+        "Dollars": "22",
+        "Stats" : [
+            "Magic",
+            "Stamina"
+        ],
+        "Active" : false
+    },
+    "3" : {
+        "Type": "Quest",
+        "Name": "Bad Quest",
+        "Description": "I don't even know.",
+        "Exp": "3",
+        "Dollars": "2",
+        "Stats" : [
+        ],
+        "Active" : false
+    },
+    "4" : {
+        "Type": "Quest",
+        "Name": "Cat Walk",
+        "Description": "Walk the cat.",
+        "Exp": "33",
+        "Dollars": "5",
+        "Stats" : [
+            "Stamina",
+            "Magic"
+        ],
+        "Active" : false
+    }
+}
